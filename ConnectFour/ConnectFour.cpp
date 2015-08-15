@@ -1,7 +1,6 @@
 #include <iostream>
 #include <fstream>
 #include <string>
-#include <array>
 #include <map>
 
 
@@ -84,6 +83,7 @@ void PrintBoard(char ConnectFourBoard[][7])
 	}
 	std::cout << "--------------------------------" << std::endl;
 }
+
 
 int main(int argc, char* argv[])
 {
