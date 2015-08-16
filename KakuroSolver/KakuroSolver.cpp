@@ -42,28 +42,26 @@ void tokenize(const std::string& str, ContainerT& tokens,
 }
 /****************************************************************************************/
 
+bool SolutionCheck(){
+	return false;
+}
 
 
-
-int main(int argc, char* argv[]){
-	if (argc < 1){
-		std::cout << "The first argument must be a file containing the puzzle definition"
-				  << std:: endl;
-		return 1;
-	}
-	std::ifstream PuzzleFile(argv[0]);
+int main(){
+	std::ifstream PuzzleFile("ExampleKakuroPuzzle");
 	std::string PuzzleFileLine;
-	std::vector<std::string> TokenSlot;
+	std::vector <std::vector <std::string> > Tokens;
 	if(PuzzleFile.is_open()){
 		while(std::getline(PuzzleFile, PuzzleFileLine)){
-			tokenize(PuzzleFileLine, TokenSlot);
-			std::cout << PuzzleFileLine << std::endl;
-			std::cout << TokenSlot[0] << std::endl;
+			std::vector< std::string > TokenLine; 
+			tokenize(PuzzleFileLine, TokenLine);
+			Tokens.push_back(TokenLine);
 		}
+
+		
+
+		
 	}
-	else{
-		std::cout << "error: File '" << argv[0] << "'not found" << std::endl;
-		return 1;
-	}
+
 	return 0;
 }
